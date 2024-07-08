@@ -305,4 +305,14 @@ function loadFromLocalStorage() {
 
 
 
-
+//carrusel
+document.addEventListener('DOMContentLoaded', () => {
+    // Función para inicializar el carrusel
+    const initializeCarousel = () => {
+        const carousel = new bootstrap.Carousel(document.querySelector('#carouselExampleAutoplaying'), {
+            interval: 3000, // Intervalo de 2 segundos
+            ride: 'carousel'
+        });
+    };
+    initializeCarousel();
+});
