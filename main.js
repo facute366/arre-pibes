@@ -18,11 +18,13 @@ function login() {
     const password = document.getElementById('password').value;
 
     if (username === predefinedUsername && password === predefinedPassword) {
-        alert('Inicio de sesión exitoso');
-        localStorage.setItem('loggedIn', 'true'); // Guardar el estado de la sesión
-        window.location.href = 'index-admin.html';
+        sweet("success","Inicio de sesión exitoso");
+        setTimeout(()=>{
+            localStorage.setItem('loggedIn', 'true'); // Guardar el estado de la sesión
+            window.location.href = 'index-admin.html';
+        },1500)
     } else {
-        alert('Nombre de usuario o contraseña incorrectos');
+        sweet("error","Nombre de usuario o contraseña incorrectos");
     }
 }
 
@@ -44,6 +46,37 @@ function logout() {
     localStorage.removeItem('loggedIn'); // Eliminar el estado de la sesión
 }
 
+
+// SweetAlert
+
+function sweet(icon, title){
+    if(icon === "error"){
+        Swal.fire({
+            icon: icon,
+            title: title,
+            customClass: {
+                popup: 'mi-popup',
+                title: 'mi-titulo',
+                content: 'mi-contenido',
+                confirmButton: 'mi-boton-confirmar'
+            }
+        });
+    }else{  
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Inicio de sesión exitoso",
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+                popup: 'mi-popup',
+                title: 'mi-titulo',
+                content: 'mi-contenido',
+                confirmButton: 'mi-boton-confirmar'
+            }
+        });
+    }
+}
 
 
 //MENU ADMIN

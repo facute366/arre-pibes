@@ -884,6 +884,26 @@ footer p{
     background-color: var(--secundario);
 }
 
+/* Sweet Alert */
+.mi-popup {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mi-titulo {
+    font-size: 20px !important;
+    color: var(--negro);
+}
+
+.mi-boton-confirmar {
+    background-color: var(--primario) !important;
+    border-radius: 5px;
+}
+
+
+/*------------*/
+
 @media (max-width: 768px) {
     #contenidoSesion h2{
         font-size: 25px !important;
